@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nextjs-app-deployment
+  labels:
+    app: my-nextjs-app
+spec:
+  replicas: 2 # You can change this number
+  selector:
+    matchLabels:
+      app: my-nextjs-app
+  template:
+    metadata:
+      labels:
+        app: my-nextjs-app
+    spec:
+      containers:
+      - name: my-nextjs-app
+        # IMPORTANT: Replace this with your GHCR image URL
+        image: ghcr.io/YOUR_USERNAME/YOUR_REPO:main 
+        ports:
+        - containerPort: 3000
+        # Health Checks
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10
