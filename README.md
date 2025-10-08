@@ -31,7 +31,7 @@ To run the application locally using Docker:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO.git](https://github.com/YOUR_USERNAME/YOUR_REPO.git)
+    git clone https://github.com/SYED-ABDULRAHMAN/DevOps-Internship-Assessment
     cd YOUR_REPO
     ```
 
@@ -92,4 +92,4 @@ This project is configured with a GitHub Actions workflow (`.github/workflows/ma
 3.  **Push:** It pushes the newly built image to the GitHub Container Registry (GHCR).
 
 The container image for this repository can be found at:
-`ghcr.io/YOUR_USERNAME/YOUR_REPO:main`
+https://github.com/SYED-ABDULRAHMAN/DevOps-Internship-Assessment/pkgs/container/devops-internship-assessment
